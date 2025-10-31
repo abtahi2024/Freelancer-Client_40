@@ -94,11 +94,14 @@ const Navbar = () => {
           </li>
           <li className="m-1">
             <div
-              className=" text-lg
-border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
-active:border-b-[2px] active:brightness-90 active:translate-y-[2px]"
+              className="text-lg
+             border-b-4
+             hover:brightness-110 hover:-translate-y-1 hover:border-b-6
+             active:border-b-2 active:brightness-90 active:translate-y-2"
             >
-              <summary><Link to="/dashboard">Dashboard</Link></summary>
+              <summary>
+                <Link to="/dashboard">Dashboard</Link>
+              </summary>
             </div>
           </li>
           <li className="m-1">
@@ -109,7 +112,9 @@ active:border-b-[2px] active:brightness-90 active:translate-y-[2px]"
             </Button>
           </li>
           <li className="m-1">
-            <Link className="btn btn-neutral" to="/about">About</Link>
+            <Link className="btn btn-neutral" to="/about">
+              About
+            </Link>
           </li>
         </ul>
       </div>
@@ -149,8 +154,12 @@ active:border-b-[2px] active:brightness-90 active:translate-y-[2px]"
                 className="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow"
               >
                 <div className="card-body">
-                  <span className="text-lg font-bold">{orders?.length||0}Items</span>
-                  <span className="text-info">Subtotal: ${orders?.total_price}</span>
+                  <span className="text-lg font-bold">
+                    {orders?.length || 0}Items
+                  </span>
+                  <span className="text-info">
+                    Subtotal: ${orders?.total_price}
+                  </span>
                   <div className="card-actions">
                     <button
                       className="btn btn-primary btn-block "
@@ -161,9 +170,8 @@ active:border-b-[2px] active:brightness-90 active:translate-y-[2px]"
                   </div>
                 </div>
               </div>
-            
             </div>
-            
+
             <div className="dropdown dropdown-end ">
               <div
                 tabIndex={0}

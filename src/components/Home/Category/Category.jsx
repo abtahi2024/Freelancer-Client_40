@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import api_Client from "../../../ServicesApi/api_Client";
 import CategoryItems from "./CategoryItems";
+import ErrorAlert from "../../ErrorAlert";
 
 const Category = () => {
   const [categories, setCategories] = useState([]);

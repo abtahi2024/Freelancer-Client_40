@@ -121,7 +121,7 @@ const Navbar = () => {
       <div className="navbar-end">
         {user ? (
           <div>
-            <div className="dropdown dropdown-end">
+            <div className="dropdown dropdown-end relative">
               <div
                 tabIndex={0}
                 role="button"
@@ -151,7 +151,7 @@ const Navbar = () => {
 
               <div
                 tabIndex={0}
-                className="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow"
+                className="card card-compact dropdown-content bg-base-100 z-50 mt-3 w-52 shadow"
               >
                 <div className="card-body">
                   <span className="text-lg font-bold">
@@ -170,25 +170,22 @@ const Navbar = () => {
                   </div>
                 </div>
               </div>
+              
             </div>
 
-            <div className="dropdown dropdown-end ">
+            <div className="dropdown dropdown-end relative">
               <div
                 tabIndex={0}
-                role="button"
                 className="btn btn-ghost btn-circle avatar w-14"
               >
                 <div className="w-10 rounded-full">
                   <img
-                    alt="Tailwind CSS Navbar component"
+                    alt="Profile Avatar"
                     src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
                   />
                 </div>
               </div>
-              <ul
-                tabIndex="-1"
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-              >
+              <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow z-50">
                 <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-semibold bg-white border border-gray-300 hover:text-indigo-600 transition-all duration-300 text-gray-900 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg ">
                   <Link to="/">Home</Link>
                 </li>
@@ -203,6 +200,7 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
+
           </div>
         ) : (
           <div>

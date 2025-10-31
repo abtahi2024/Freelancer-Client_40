@@ -31,19 +31,16 @@ const OrderCard = ({ order, onCancel }) => {
       const response = await authApiClient.post("/payment/initiate/", {
         amount: order.total_price,
         orderId: order.id,
-        numItems: order.items?.length, // must match backend
+        num_items: order.items?.length,
       });
-
       if (response.data.payment_url) {
-        // Redirect to SSLCommerz payment page
+        setLoading(false);
         window.location.href = response.data.payment_url;
       } else {
-        alert("Payment initiation failed.");
-        setLoading(false);
+        alert("Payment failed");
       }
     } catch (error) {
       console.log(error);
-      setLoading(false);
     }
   };
 

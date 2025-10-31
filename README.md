@@ -3,7 +3,7 @@
 This is the **frontend** of the Freelancer Platform — a web application where users can browse services, hire freelancers, and manage their own services.  
 Built using **React**, **React Router**, and **Tailwind CSS**, with authentication and payment integration via a Django REST API backend.
 
-
+Frontend: [https://freelancer-client-40.vercel.app/](https://freelancer-client-40.vercel.app/)
 Backend API: [https://freelancer-platform-27.vercel.app/api/v1/](https://freelancer-platform-27.vercel.app/api/v1/)
 
 

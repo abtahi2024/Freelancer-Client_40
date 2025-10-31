@@ -35,13 +35,13 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex="-1"
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
           >
             <li>
               <a>Item 1</a>
             </li>
             <li>
-              <a>Parent</a>
+              <a>About</a>
               <ul className="p-2">
                 <li>
                   <a>Submenu 1</a>
@@ -185,7 +185,7 @@ const Navbar = () => {
                   />
                 </div>
               </div>
-              <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow z-50">
+              <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow z-10">
                 <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-semibold bg-white border border-gray-300 hover:text-indigo-600 transition-all duration-300 text-gray-900 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg ">
                   <Link to="/">Home</Link>
                 </li>
@@ -193,7 +193,7 @@ const Navbar = () => {
                   <Link to="/dashboard/profile">Profile</Link>
                 </li>
                 <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-semibold bg-white border border-gray-300 hover:text-indigo-600 transition-all duration-300 text-gray-900 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg ">
-                  <a onClick={handleLogout}>Logout</a>
+                  <button type="submit" onClick={handleLogout}>Logout</button>
                 </li>
                 <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-semibold bg-white border border-gray-300 hover:text-indigo-600 transition-all duration-300 text-gray-900 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg ">
                   Settings

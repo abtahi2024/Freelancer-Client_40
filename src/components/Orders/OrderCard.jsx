@@ -53,7 +53,7 @@ const OrderCard = ({ order, onCancel,setValidationMessage }) => {
       const response = await authApiClient.post("/payment/initiate/", {
         amount: order.total_price,
         orderId: order.id,
-        num_items: order.items?.length,
+        numItems: order.items?.length,
       });
       if (response.data.payment_url) {
         setLoading(false);

@@ -3,7 +3,7 @@ import OrderTable from "./OrderTable";
 import useAuthContext from "../../hooks/useAuthContext";
 import authApiClient from "../../ServicesApi/auth-api-client";
 
-const OrderCard = ({ order, onCancel,setValidationMessage }) => {
+const OrderCard = ({ order, onCancel }) => {
   const { user } = useAuthContext();
   const [status, setStatus] = useState(order.status);
   const [loading, setLoading] = useState(false);
@@ -27,33 +27,11 @@ const OrderCard = ({ order, onCancel,setValidationMessage }) => {
 
   const handlePayment = async () => {
     setLoading(true);
-
-    const validationRules = [
-      { message: "first name", condition: !user.first_name },
-      { message: "last name", condition: !user.last_name },
-      { message: "address", condition: !user.address },
-      { message: "phone number", condition: !user.phone_number },
-    ];
-
-    const missingFields = validationRules
-      .filter((rule) => rule.condition)
-      .map((rule) => rule.message);
-
-    if (missingFields.length > 0) {
-      setValidationMessage(
-        `Please add your ${missingFields.join(
-          ", "
-        )} by editing your profile before proceeding with payment.`
-      );
-      setLoading(false);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
     try {
       const response = await authApiClient.post("/payment/initiate/", {
         amount: order.total_price,
         orderId: order.id,
-        numItems: order.items?.length,
+        num_items: order.items?.length,
       });
       if (response.data.payment_url) {
         setLoading(false);

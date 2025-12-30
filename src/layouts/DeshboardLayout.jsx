@@ -43,7 +43,7 @@ const DeshboardLayout = () => {
     { to: "/dashboard/orders", label: "Orders" },
   ];
 
-  const menuItems = user.is_staff ? adminMenues : customerMenus;
+  const menuItems = user?.role==="seller" ? adminMenues : customerMenus;
   return (
     <div>
       <div className="flex h-screen transition-colors duration-300">
